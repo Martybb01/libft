@@ -1,7 +1,8 @@
 NAME = libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
-ARCL = ar -rcs
+AR = ar
+ARFLAGS = -rcs
 RM = rm -f
 
 SRCS := $(wildcard ft_*.c)
@@ -9,8 +10,8 @@ OBJS := $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJS)
-	$(ARCL) $(NAME) $(OBJS)
+$(NAME): $(SRCS)
+	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	$(CC) $(CFLAGS) -c $(SRCS)
 
 clean: 
