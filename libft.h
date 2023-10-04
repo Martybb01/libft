@@ -15,5 +15,6 @@ int ft_strlen(const char *s);
 unsigned int ft_strlcpy(char *dest, char *src, unsigned int size);
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
 int ft_strncmp(char *s1, char *s2, size_t n);
+char *ft_strnstr(const char *haystack, const char *needle, size_t len);
 
 #endif
