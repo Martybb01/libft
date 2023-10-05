@@ -3,7 +3,7 @@
 /* locates the first occurence of c (converted to char) in the string pointed to by s. The terminating null character is considered to be part of the string.
 It returns a pointer to the located character, or NULL if the character doesn not appear in the string. */
 
-char *strchr(const char *s, int c)
+char *ft_strchr(const char *s, int c)
 {
     size_t i;
 
