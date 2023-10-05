@@ -26,7 +26,7 @@ int main()
     char c = 'W';
     char *p;
 
-    p = strchr(str, c);
+    p = ft_strchr(str, c);
 
     printf("%s", p);
     return 0;
