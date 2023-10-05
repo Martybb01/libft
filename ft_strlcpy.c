@@ -6,7 +6,7 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
     i = 0;
     if (size == 0)
         return (ft_strlen(src));
-    while (i < (size - 1))
+    while (src[i] && i < (size - 1))
     {
         dest[i] = src[i];
         i++;
@@ -16,4 +16,16 @@ unsigned int ft_strlcpy(char *dest, char *src, unsigned int size)
         dest[i] = '\0';
     }
     return (ft_strlen(src));
+}
+
+int main()
+{
+    char src[] = "Hello, world!";
+    char dest[10];
+    unsigned int len = ft_strlcpy(dest, src, 6);
+
+    // ft_strlcpy(dest, src, size);
+    // printf("String dest is: %s", dest); // String dest is: Hello
+    printf("Length of src is: %d\n", len); // Length of src is: 13
+    return (0);
 }
