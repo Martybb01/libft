@@ -10,7 +10,7 @@ OBJS := $(SRCS:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(SRCS)
+$(NAME): $(OBJS)
 	$(AR) $(ARFLAGS) $(NAME) $(OBJS)
 	$(CC) $(CFLAGS) -c $(SRCS)
 
