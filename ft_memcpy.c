@@ -10,9 +10,7 @@ void *memcpy(void *dest, const void *src, size_t n)
     dest2 = (unsigned char *)dest;
     src2 = (unsigned char *)src;
 
-    if (!n || dest == src)
-        return (dest);
-    while (n--)
+    while (i < n)
     {
         dest2[i] = src2[i];
         i++;
@@ -22,14 +20,14 @@ void *memcpy(void *dest, const void *src, size_t n)
 
 int main()
 {
-    char src[] = "ciao";
-    char dest[] = "boh";
-    size_t n = 3;
+    char src[] = "Spiderman";
+    char dest[100];
+    size_t n = 5;
 
-    printf("src before memcpy: %s\n", src);   // ciao
-    printf("dest before memcpy: %s\n", dest); // boh
+    printf("src before memcpy: %s\n", src);
+    printf("dest before memcpy: %s\n", dest);
     memcpy(dest, src, n);
-    printf("src after memcpy: %s\n", src);   // ciao
-    printf("dest after memcpy: %s\n", dest); // cia
+    printf("src after memcpy: %s\n", src);
+    printf("dest after memcpy: %s\n", dest);
     return 0;
 }
