@@ -17,14 +17,14 @@ void *ft_memset(void *s, int c, size_t n)
     return (str);
 }
 
-int main()
-{
-    char str[] = "Hello World!";
-    char c = 'o';
-    char *p;
+// int main()
+// {
+//     char str[] = "Hello World!";
+//     char c = 'o';
+//     char *p;
 
-    p = memset(str, c, 5);
+//     p = ft_memset(str, c, 5);
 
-    printf("%s", p);
-    return 0;
-}
+//     printf("%s", p);
+//     return 0;
+// }
