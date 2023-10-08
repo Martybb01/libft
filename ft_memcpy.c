@@ -18,16 +18,16 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
     return (dest);
 }
 
-int main()
-{
-    char src[] = "Spiderman";
-    char dest[100];
-    size_t n = 5;
+// int main()
+// {
+//     char src[] = "Spiderman";
+//     char dest[100];
+//     size_t n = 5;
 
-    printf("src before memcpy: %s\n", src);
-    printf("dest before memcpy: %s\n", dest);
-    memcpy(dest, src, n);
-    printf("src after memcpy: %s\n", src);
-    printf("dest after memcpy: %s\n", dest);
-    return 0;
-}
+//     printf("src before memcpy: %s\n", src);
+//     printf("dest before memcpy: %s\n", dest);
+//     memcpy(dest, src, n);
+//     printf("src after memcpy: %s\n", src);
+//     printf("dest after memcpy: %s\n", dest);
+//     return 0;
+// }

@@ -22,13 +22,13 @@ char *ft_strdup(char *src)
     return (dest);
 }
 
-int main()
-{
-    char src[] = "fjrgrbrfnowp";
-    char *dest;
+// int main()
+// {
+//     char src[] = "fjrgrbrfnowp";
+//     char *dest;
 
-    dest = ft_strdup(src);
-    printf("src: %s\n", src);   // ciao
-    printf("dest: %s\n", dest); // ciao
-    return 0;
-}
+//     dest = ft_strdup(src);
+//     printf("src: %s\n", src);   // ciao
+//     printf("dest: %s\n", dest); // ciao
+//     return 0;
+// }
