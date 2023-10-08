@@ -29,5 +29,6 @@ void *ft_memset(void *s, int c, size_t n);
 void ft_bzero(void *s, size_t n);
 void *ft_calloc(size_t nitems, size_t size);
 char *ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_strjoin(char const *s1, char const *s2);
 
 #endif
