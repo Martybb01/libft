@@ -6,10 +6,8 @@ char *ft_strdup(char *src)
     int i;
     int len;
 
-    len = 0;
-    while (src[len])
-        len++;
-    dest = malloc(sizeof(char) * (len + 1));
+    len = ft_strlen(src);
+    dest = (char *)malloc(sizeof(*dest) * (len + 1));
 
     if (!dest)
         return (NULL);
@@ -26,7 +24,7 @@ char *ft_strdup(char *src)
 
 int main()
 {
-    char src[] = "ciao";
+    char src[] = "fjrgrbrfnowp";
     char *dest;
 
     dest = ft_strdup(src);
