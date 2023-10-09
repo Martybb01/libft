@@ -24,23 +24,23 @@ void *ft_memmove(void *dest, const void *src, size_t n)
         i = 0;
         while (i < n)
         {
-            dest2[n] = src2[n];
+            dest2[i] = src2[i];
             i++;
         }
     }
     return (dest);
 }
 
-int main()
-{
-    char src[] = "boh";
-    char dest[] = "Ciaomare";
-    size_t n = 5;
+// int main()
+// {
+//     char src[] = "spiderman";
+//     char dest[] = "bohhrigriguhreigu";
+//     size_t n = 15;
 
-    printf("src before memmove: %s\n", src);
-    printf("dest before memmove: %s\n", dest);
-    memmove(dest, src, n);
-    printf("src after memmove: %s\n", src);
-    printf("dest after memmove: %s\n", dest);
-    return 0;
-}
+//     printf("src before memmove: %s\n", src);
+//     printf("dest before memmove: %s\n", dest);
+//     ft_memmove(dest, src, n);
+//     printf("src after memmove: %s\n", src);
+//     printf("dest after memmove: %s\n", dest);
+//     return 0;
+// }

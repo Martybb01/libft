@@ -20,13 +20,13 @@ void *ft_memcpy(void *dest, const void *src, size_t n)
 
 // int main()
 // {
-//     char src[] = "Spiderman";
-//     char dest[100];
-//     size_t n = 5;
+//     char src[] = "bohfjeifueg";
+//     char dest[] = "spiderman";
+//     size_t n = 1;
 
 //     printf("src before memcpy: %s\n", src);
 //     printf("dest before memcpy: %s\n", dest);
-//     memcpy(dest, src, n);
+//     ft_memcpy(dest, src, n);
 //     printf("src after memcpy: %s\n", src);
 //     printf("dest after memcpy: %s\n", dest);
 //     return 0;
