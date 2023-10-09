@@ -16,14 +16,14 @@ char *ft_strrchr(const char *s, int c)
     return (NULL);
 }
 
-int main()
-{
-    char str[] = "Hello World ciao!";
-    char c = 'o';
-    char *p;
+// int main()
+// {
+//     char str[] = "Hello World ciao!";
+//     char c = 'H';
+//     char *p;
 
-    p = ft_strrchr(str, c);
+//     p = ft_strrchr(str, c);
 
-    printf("%s", p);
-    return 0;
-}
+//     printf("%s", p);
+//     return 0;
+// }

@@ -22,20 +22,16 @@ void *ft_memmove(void *dest, const void *src, size_t n)
     else
     {
         i = 0;
-        while (i < n)
-        {
-            dest2[i] = src2[i];
-            i++;
-        }
+        ft_memcpy(dest2, src2, n);
     }
     return (dest);
 }
 
 // int main()
 // {
-//     char src[] = "spiderman";
-//     char dest[] = "bohhrigriguhreigu";
-//     size_t n = 15;
+//     char src[] = "Spiderman";
+//     char dest[] = "boh";
+//     size_t n = 3;
 
 //     printf("src before memmove: %s\n", src);
 //     printf("dest before memmove: %s\n", dest);
