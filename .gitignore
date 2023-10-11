@@ -1,3 +1,4 @@
 *.o
 *.a
 *Zone.Identifier
+*.txt
