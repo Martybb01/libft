@@ -1,4 +1,5 @@
 #include "libft.h"
+#include <string.h>
 
 /* locates the first occurence of c (converted to char) in the string pointed to by s. The terminating null character is considered to be part of the string.
 It returns a pointer to the located character, or NULL if the character doesn not appear in the string. */
@@ -20,14 +21,17 @@ char *ft_strchr(const char *s, int c)
     return (NULL);
 }
 
-int main()
-{
-    char str[] = "Hello World!";
-    char c = 'W';
-    char *p;
+// int main()
+// {
+//     char str[] = "Hello World!";
+//     char c = 'W';
+//     char *p;
+//     char *p2;
 
-    p = ft_strchr(str, c);
+//     p = ft_strchr(str, c);
+//     p2 = strchr(str, c);
 
-    printf("%s", p);
-    return 0;
-}
+//     printf("%s", p);
+//     printf("%s", p2);
+//     return 0;
+// }
