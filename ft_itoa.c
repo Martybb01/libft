@@ -52,6 +52,8 @@ char *ft_itoa(int n)
     result = (char *)malloc(sizeof(char) * (len + 1));
     if (!result)
         return (NULL);
+    if (n == -2147483648)
+        return (ft_strdup("-2147483648"));
     convert_to_string(result, n, len);
     return (result);
 }
@@ -61,7 +63,7 @@ int main(void)
     int n;
     char *str;
 
-    n = (12345);
+    n = (-2147483648);
     str = ft_itoa(n);
     printf("La stringa è: %s\n", str);
     free(str);
