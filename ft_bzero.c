@@ -8,10 +8,10 @@ void	ft_bzero(void *s, size_t n)
 	ft_memset(s, '\0', n);
 }
 
-// int	main(void)
+// int main(void)
 // {
-// 	char	str[] = "Spiderman";
-// 	size_t	n;
+// 	char str[] = "Spiderman";
+// 	size_t n;
 
 // 	n = 2;
 // 	printf("str before bzero: %s\n", str);
