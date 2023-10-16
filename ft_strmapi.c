@@ -1,19 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strmapi.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 18:17:15 by marboccu          #+#    #+#             */
+/*   Updated: 2023/10/16 18:17:19 by marboccu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
-
-/* Applica una funzione specificata dall'utente a ciascun carattere di una stringa. La funzione prende due argomenti:
-
-s: La stringa da cui applicare la funzione.
-f: Una funzione che prende come argomenti un indice e un carattere e restituisce un carattere.
-
-La funzione ft_strmapi() alloca una nuova stringa della stessa lunghezza di s più un carattere nullo terminatore. Per ogni carattere di s,
-	la funzione f() viene applicata al carattere e il risultato viene scritto nella nuova stringa. Una volta completata l'iterazione,
-	la nuova stringa viene restituita.
-
-Se s è null o f è null, la funzione restituisce null.
-
-Può essere utilizzata per implementare una varietà di operazioni sulle stringhe,
-	come convertire una stringa in maiuscolo o minuscolo,
-	rimuovere gli spazi bianchi o invertire l'ordine dei caratteri. */
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

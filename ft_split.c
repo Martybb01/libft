@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 21:00:37 by marboccu          #+#    #+#             */
+/*   Updated: 2023/10/16 21:00:59 by marboccu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
-static void declare_variables(size_t *i, size_t *start, size_t *word_count,
-							  size_t *word_len)
+static void	declare_variables(size_t *i, size_t *start, size_t *word_count,
+		size_t *word_len)
 {
 	*i = 0;
 	*start = 0;
@@ -9,13 +21,13 @@ static void declare_variables(size_t *i, size_t *start, size_t *word_count,
 	*word_len = 0;
 }
 
-char **ft_split(char const *s, char c)
+char	**ft_split(char const *s, char c)
 {
-	char **result;
-	size_t i;
-	size_t start;
-	size_t word_count;
-	size_t word_len;
+	char	**result;
+	size_t	i;
+	size_t	start;
+	size_t	word_count;
+	size_t	word_len;
 
 	declare_variables(&i, &start, &word_count, &word_len);
 	result = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
@@ -38,16 +50,16 @@ char **ft_split(char const *s, char c)
 	return (result);
 }
 
-int main(void)
-{
-	char **result;
-	char *s;
-	char c;
+// int	main(void)
+// {
+// 	char	**result;
+// 	char	*s;
+// 	char	c;
 
-	s = "Hello World";
-	c = ' ';
-	result = ft_split(s, c);
-	printf("%s\n", result[0]);
-	printf("%s\n", result[1]);
-	return (0);
-}
+// 	s = "Hello World";
+// 	c = ' ';
+// 	result = ft_split(s, c);
+// 	printf("%s\n", result[0]);
+// 	printf("%s\n", result[1]);
+// 	return (0);
+// }
