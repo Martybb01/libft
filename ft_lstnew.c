@@ -11,10 +11,10 @@ t_list *ft_lstnew(void *content)
     new->next = NULL;
     return (new);
 }
-int main()
-{
-    char *str = "Hello World!";
-    t_list *new = ft_lstnew(str);
-    printf("%s\n", (char *)new->content);
-    return (0);
-}
+// int main()
+// {
+//     char *str = "Hello World!";
+//     t_list *new = ft_lstnew(str);
+//     printf("%s\n", (char *)new->content);
+//     return (0);
+// }
