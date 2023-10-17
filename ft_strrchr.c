@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:11:00 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/16 18:11:00 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/17 23:10:39 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,13 @@
 
 // #include <string.h>
 
-char	*ft_strrchr(const char *s, int c)
+char *ft_strrchr(const char *s, int c)
 {
-	size_t	i;
+	size_t i;
 
 	i = ft_strlen(s);
+	if (!s)
+		return (NULL);
 	while (i > 0)
 	{
 		if (s[i] == c)
