@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/10/16 22:10:22 by marboccu          #+#    #+#             */
+/*   Updated: 2023/10/16 22:57:45 by marboccu         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 #define LIBFT_H
 
-#include <unistd.h>
-#include <stdlib.h>
 #include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 typedef struct s_list
 {
@@ -22,7 +34,8 @@ int ft_strlen(const char *s);
 unsigned int ft_strlcpy(char *dest, const char *src, size_t size);
 unsigned int ft_strlcat(char *dest, char *src, unsigned int size);
 int ft_strncmp(char *s1, char *s2, size_t n);
-char *ft_strnstr(const char *bigstr, const char *smallstr, size_t len);
+char *ft_strnstr(const char *bigstr, const char *smallstr,
+                 size_t len);
 int ft_atoi(const char *str);
 char *ft_strdup(char *src);
 char *ft_strchr(const char *s, int c);
@@ -51,5 +64,6 @@ void ft_lstadd_front(t_list **lst, t_list *new);
 int ft_lstsize(t_list *lst);
 t_list *ft_lstlast(t_list *lst);
 void ft_lstadd_back(t_list **lst, t_list *new);
+void ft_lstdelone(t_list *lst, void (*del)(void *));
 
 #endif
