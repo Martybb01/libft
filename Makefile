@@ -45,7 +45,6 @@ OBJS := $(SRCS:.c=.o)
 all: $(NAME)
 
 $(NAME): $(OBJS)
-    $(CC) $(CFLAGS) -c $(SRCS)
     $(AR) $(ARFLAGS) $(NAME) $(OBJS)
 
 clean:
