@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/17 17:32:15 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/17 21:04:06 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/17 23:33:04 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,21 +17,21 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 	t_list	*temp;
 	t_list	*new;
 
-	if (!lst || !f)
+	if (!lst || !f || !del)
 		return (NULL);
 	new = NULL;
-	if (!new)
-		return (NULL);
 	while (lst)
 	{
 		temp = ft_lstnew((*f)(lst->content));
 		if (!temp)
-		{
-			ft_lstclear(&new, del);
-			return (NULL);
-		}
+			break ;
 		ft_lstadd_back(&new, temp);
 		lst = lst->next;
+	}
+	if (!temp)
+	{
+		ft_lstclear(&new, del);
+		return (NULL);
 	}
 	return (new);
 }
@@ -40,7 +40,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 // {
 //     if (ft_isalpha((size_t)c))
 //     {
-//          char ch = (unsigned char)c;
+//         char ch = (unsigned char)c;
 //         if (c >= 'a' && c <= 'z')
 //             return (void *)(size_t)(c - 'a' + 'A');
 //     }
