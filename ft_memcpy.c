@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:02:56 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/16 18:02:58 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/17 17:43:22 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	i = 0;
 	dest2 = (unsigned char *)dest;
 	src2 = (unsigned char *)src;
+	if (dest == NULL && src == NULL)
+		return (NULL);
 	while (i < n)
 	{
 		dest2[i] = src2[i];
