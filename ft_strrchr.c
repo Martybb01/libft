@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:11:00 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/18 14:21:24 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 15:36:04 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,15 +17,17 @@
 char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
+	int		temp;
 
+	temp = c % 256;
 	i = ft_strlen(s);
 	while (i > 0)
 	{
-		if (s[i] == c)
+		if (s[i] == temp)
 			return ((char *)s + i);
 		i--;
 	}
-	if (s[i] == c)
+	if (s[i] == temp)
 		return ((char *)s + i);
 	return (NULL);
 }
