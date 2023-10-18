@@ -6,16 +6,16 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:00:37 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/18 11:11:08 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 12:16:35 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	count_substr(const char *str, char c)
+static int count_substr(const char *str, char c)
 {
-	int	count;
-	int	trigger;
+	int count;
+	int trigger;
 
 	count = 0;
 	trigger = 0;
@@ -35,10 +35,10 @@ static int	count_substr(const char *str, char c)
 	return (count);
 }
 
-static char	*create_substr(const char *str, int start, int end)
+static char *create_substr(const char *str, int start, int end)
 {
-	int		i;
-	char	*substr;
+	int i;
+	char *substr;
 
 	i = 0;
 	substr = (char *)malloc(sizeof(char) * (end - start + 1));
@@ -54,12 +54,12 @@ static char	*create_substr(const char *str, int start, int end)
 	return (substr);
 }
 
-char	**ft_split(char const *s, char c)
+char **ft_split(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	int		trigger;
-	char	**result;
+	int i;
+	size_t j;
+	int trigger;
+	char **result;
 
 	i = 0;
 	j = 0;
@@ -83,11 +83,11 @@ char	**ft_split(char const *s, char c)
 	return (result);
 }
 
-int	main(void)
+int main(void)
 {
-	char	**result;
-	char	*s;
-	char	c;
+	char **result;
+	char *s;
+	char c;
 
 	s = "      SPlit|this|for|me||!|";
 	c = '|';
