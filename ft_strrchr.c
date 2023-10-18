@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:11:00 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/17 23:20:01 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:21:24 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ char	*ft_strrchr(const char *s, int c)
 {
 	size_t	i;
 
-	if (!s)
-		return (NULL);
 	i = ft_strlen(s);
 	while (i > 0)
 	{

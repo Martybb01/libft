@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:08:24 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/17 23:10:19 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 14:22:11 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,6 @@ char	*ft_strchr(const char *s, int c)
 	size_t	i;
 
 	i = 0;
-	if (!s)
-		return (NULL);
 	while (s[i] != '\0')
 	{
 		if (s[i] == c)
@@ -32,17 +30,17 @@ char	*ft_strchr(const char *s, int c)
 	return (NULL);
 }
 
-// int main()
+// int	main(void)
 // {
-//     char str[] = "Hello World!";
-//     char c = 'W';
-//     char *p;
-//     char *p2;
+// 	char	str[] = "Hello World!";
+// 	char	c;
+// 	char	*p;
+// 	char	*p2;
 
-//     p = ft_strchr(str, c);
-//     p2 = strchr(str, c);
-
-//     printf("%s", p);
-//     printf("%s", p2);
-//     return (0);
+// 	c = 'W';
+// 	p = ft_strchr(str, c);
+// 	p2 = strchr(str, c);
+// 	printf("%s", p);
+// 	printf("%s", p2);
+// 	return (0);
 // }
