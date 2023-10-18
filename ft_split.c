@@ -6,60 +6,96 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 21:00:37 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/16 21:00:59 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 11:11:08 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	declare_variables(size_t *i, size_t *start, size_t *word_count,
-		size_t *word_len)
+static int	count_substr(const char *str, char c)
 {
-	*i = 0;
-	*start = 0;
-	*word_count = 0;
-	*word_len = 0;
+	int	count;
+	int	trigger;
+
+	count = 0;
+	trigger = 0;
+	if (!str)
+		return (0);
+	while (*str)
+	{
+		if (*str != c && trigger == 0)
+		{
+			trigger = 1;
+			count++;
+		}
+		else if (*str == c)
+			trigger = 0;
+		str++;
+	}
+	return (count);
+}
+
+static char	*create_substr(const char *str, int start, int end)
+{
+	int		i;
+	char	*substr;
+
+	i = 0;
+	substr = (char *)malloc(sizeof(char) * (end - start + 1));
+	if (!str || !substr)
+		return (0);
+	while (start < end)
+	{
+		substr[i] = str[start];
+		i++;
+		start++;
+	}
+	substr[i] = '\0';
+	return (substr);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	char	**result;
 	size_t	i;
-	size_t	start;
-	size_t	word_count;
-	size_t	word_len;
+	size_t	j;
+	int		trigger;
+	char	**result;
 
-	declare_variables(&i, &start, &word_count, &word_len);
-	result = (char **)malloc(sizeof(char *) * (ft_strlen(s) + 1));
-	if (!result)
+	i = 0;
+	j = 0;
+	trigger = -1;
+	result = malloc(sizeof(char *) * (count_substr(s, c) + 1));
+	if (!s || !result)
 		return (NULL);
-	while (i++ <= ft_strlen(s))
+	while (i <= ft_strlen(s))
 	{
-		if (s[i] == c || s[i] == '\0')
+		if (s[i] != c && trigger < 0)
+			trigger = i;
+		else if ((s[i] == c || i == ft_strlen(s)) && trigger >= 0)
 		{
-			word_len = i - start;
-			result[word_count] = (char *)malloc(sizeof(char) * (word_len + 1));
-			if (!result[word_count])
-				return (NULL);
-			ft_strlcpy(result[word_count], &s[start], word_len + 1);
-			start = i + 1;
-			word_count++;
+			result[j] = create_substr(s, trigger, i);
+			j++;
+			trigger = -1;
 		}
+		i++;
 	}
-	result[word_count] = NULL;
+	result[j] = NULL;
 	return (result);
 }
 
-// int	main(void)
-// {
-// 	char	**result;
-// 	char	*s;
-// 	char	c;
+int	main(void)
+{
+	char	**result;
+	char	*s;
+	char	c;
 
-// 	s = "Hello World";
-// 	c = ' ';
-// 	result = ft_split(s, c);
-// 	printf("%s\n", result[0]);
-// 	printf("%s\n", result[1]);
-// 	return (0);
-// }
+	s = "      SPlit|this|for|me||!|";
+	c = '|';
+	result = ft_split(s, c);
+	while (*result)
+	{
+		printf("%s\n", *result);
+		result++;
+	}
+	return (0);
+}
