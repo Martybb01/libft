@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:17:41 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/16 18:17:42 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:48:01 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,18 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	end;
 	char	*str;
 	size_t	i;
+	size_t	size;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	while (s1[start] && ft_strchr(set, s1[start]))
 		start++;
 	end = ft_strlen(s1);
 	while (end >= start && ft_strchr(set, s1[end - 1]))
 		end--;
-	str = (char *)malloc(sizeof(*s1) * (end - start + 1));
+	size = end - start + 1;
+	str = (char *)malloc(sizeof(*s1) * size);
 	if (!str)
 		return (NULL);
 	i = 0;
@@ -37,14 +41,13 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (str);
 }
 
-// int main(void)
+// int main()
 // {
-//     char s1[] = "Hello, world!";
-//     char set[] = "Helrd!";
-//     char *str;
+// 	char str[] = "Hello World ciao!";
+// 	char set[] = "Helao!";
+// 	char *p;
 
-//     str = ft_strtrim(s1, set);
-//     printf("%s\n", str);
-//     free(str);
-//     return (0);
+// 	p = ft_strtrim(str, set);
+// 	printf("%s", p);
+// 	return (0);
 // }
