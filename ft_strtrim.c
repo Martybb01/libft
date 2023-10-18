@@ -6,7 +6,7 @@
 /*   By: marboccu <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/16 18:17:41 by marboccu          #+#    #+#             */
-/*   Updated: 2023/10/18 16:48:01 by marboccu         ###   ########.fr       */
+/*   Updated: 2023/10/18 16:52:02 by marboccu         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (end >= start && ft_strchr(set, s1[end - 1]))
 		end--;
 	size = end - start + 1;
-	str = (char *)malloc(sizeof(*s1) * size);
+	str = (char *)malloc(sizeof(*str) * size);
 	if (!str)
 		return (NULL);
 	i = 0;
